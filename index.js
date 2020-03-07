@@ -20,13 +20,13 @@ var Utils = require('waterline-utils');
 var Sequelizer = require('./lib/sequelizer');
 
 module.exports = function sqlBuilder(options) {
-  if (!options.dialect) {
+  if (!options.client) {
     throw new Error('Missing Dialect!');
   }
 
   // Build up a Knex instance to use in the query builder
   var knexInstance = Knex({
-    dialect: options.dialect,
+    client: options.client,
     useNullAsDefault: true
   });
 

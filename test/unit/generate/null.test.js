@@ -18,27 +18,12 @@ describe('Query Generation ::', function() {
           },
           outcomes: [
             {
-              dialect: 'postgresql',
+              client: 'postgresql',
               sql: 'select * from "users" where "updatedAt" is null',
               bindings: []
             },
             {
-              dialect: 'mysql',
-              sql: 'select * from `users` where `updatedAt` is null',
-              bindings: []
-            },
-            {
-              dialect: 'sqlite3',
-              sql: 'select * from "users" where "updatedAt" is null',
-              bindings: []
-            },
-            {
-              dialect: 'oracle',
-              sql: 'select * from "users" where "updatedAt" is null',
-              bindings: []
-            },
-            {
-              dialect: 'mariadb',
+              client: 'mysql',
               sql: 'select * from `users` where `updatedAt` is null',
               bindings: []
             }

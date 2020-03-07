@@ -11,27 +11,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select * from "users" group by "count"',
             bindings: []
           },
           {
-            dialect: 'mysql',
-            sql: 'select * from `users` group by `count`',
-            bindings: []
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select * from "users" group by "count"',
-            bindings: []
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select * from "users" group by "count"',
-            bindings: []
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select * from `users` group by `count`',
             bindings: []
           }

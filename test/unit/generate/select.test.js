@@ -10,27 +10,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select * from "books"',
             bindings: []
           },
           {
-            dialect: 'mysql',
-            sql: 'select * from `books`',
-            bindings: []
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select * from "books"',
-            bindings: []
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select * from "books"',
-            bindings: []
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select * from `books`',
             bindings: []
           }
@@ -46,27 +31,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select "title", "author", "year" from "books"',
             bindings: []
           },
           {
-            dialect: 'mysql',
-            sql: 'select `title`, `author`, `year` from `books`',
-            bindings: []
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select "title", "author", "year" from "books"',
-            bindings: []
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select "title", "author", "year" from "books"',
-            bindings: []
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select `title`, `author`, `year` from `books`',
             bindings: []
           }
@@ -82,27 +52,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select "title" as "book_title", "author" as "book_author", "year" as "book_year" from "books"',
             bindings: []
           },
           {
-            dialect: 'mysql',
-            sql: 'select `title` as `book_title`, `author` as `book_author`, `year` as `book_year` from `books`',
-            bindings: []
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select "title" as "book_title", "author" as "book_author", "year" as "book_year" from "books"',
-            bindings: []
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select "title" "book_title", "author" "book_author", "year" "book_year" from "books"',
-            bindings: []
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select `title` as `book_title`, `author` as `book_author`, `year` as `book_year` from `books`',
             bindings: []
           }

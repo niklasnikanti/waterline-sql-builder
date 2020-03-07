@@ -9,16 +9,16 @@ var GeneratorFn = require('../../index');
 
 module.exports = function(test, cb) {
   var testDialect = function testDialect(outcome, next) {
-    var generator = GeneratorFn({ dialect: outcome.dialect });
+    var generator = GeneratorFn({ client: outcome.client });
     var results = generator.generate(test.query);
 
     try {
-      assert.equal(results.sql, outcome.sql, outcome.dialect);
+      assert.equal(results.sql, outcome.sql, outcome.client);
       if (outcome.bindings) {
-        assert.deepEqual(results.bindings, outcome.bindings, outcome.dialect);
+        assert.deepEqual(results.bindings, outcome.bindings, outcome.client);
       }
     } catch (e) {
-      e.dialect = outcome.dialect;
+      e.client = outcome.client;
       return cb(e);
     }
 

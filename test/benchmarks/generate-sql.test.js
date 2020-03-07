@@ -1,6 +1,6 @@
 var runBenchmarks = require('../support/benchmark-runner');
 var sqlBuilder = require('../../index')({
-  dialect: 'postgres'
+  client: 'postgres'
 });
 
 //  ╔╗ ╔═╗╔╗╔╔═╗╦ ╦╔╦╗╔═╗╦═╗╦╔═╔═╗

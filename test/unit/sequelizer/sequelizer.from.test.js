@@ -1,4 +1,4 @@
-var Sequelizer = require('../../../index')({ dialect: 'postgres' }).sequelizer;
+var Sequelizer = require('../../../index')({ client: 'postgres' }).sequelizer;
 var analyze = require('../../support/analyze');
 var assert = require('assert');
 

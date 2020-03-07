@@ -21,27 +21,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'update "books" set "status" = $1 where "publishedDate" > $2',
             bindings: ['archived', 2000]
           },
           {
-            dialect: 'mysql',
-            sql: 'update `books` set `status` = ? where `publishedDate` > ?',
-            bindings: ['archived', 2000]
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'update "books" set "status" = ? where "publishedDate" > ?',
-            bindings: ['archived', 2000]
-          },
-          {
-            dialect: 'oracle',
-            sql: 'update "books" set "status" = :1 where "publishedDate" > :2',
-            bindings: ['archived', 2000]
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'update `books` set `status` = ? where `publishedDate` > ?',
             bindings: ['archived', 2000]
           }
@@ -66,27 +51,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'update "user" set "age" = $1 where "type" = $2',
             bindings: [10, 'test']
           },
           {
-            dialect: 'mysql',
-            sql: 'update `user` set `age` = ? where `type` = ?',
-            bindings: [10, 'test']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'update "user" set "age" = ? where "type" = ?',
-            bindings: [10, 'test']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'update "user" set "age" = :1 where "type" = :2',
-            bindings: [10, 'test']
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'update `user` set `age` = ? where `type` = ?',
             bindings: [10, 'test']
           }
@@ -114,29 +84,14 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
-            sql: 'update "books" set "active" = $1, "status" = $2 where "publishedDate" > $3',
-            bindings: [false, 'archived', 2000]
+            client: 'postgresql',
+            sql: 'update "books" set "status" = $1, "active" = $2 where "publishedDate" > $3',
+            bindings: ['archived', false, 2000]
           },
           {
-            dialect: 'mysql',
-            sql: 'update `books` set `active` = ?, `status` = ? where `publishedDate` > ?',
-            bindings: [false, 'archived', 2000]
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'update "books" set "active" = ?, "status" = ? where "publishedDate" > ?',
-            bindings: [false, 'archived', 2000]
-          },
-          {
-            dialect: 'oracle',
-            sql: 'update "books" set "active" = :1, "status" = :2 where "publishedDate" > :3',
-            bindings: ['0', 'archived', 2000]
-          },
-          {
-            dialect: 'mariadb',
-            sql: 'update `books` set `active` = ?, `status` = ? where `publishedDate` > ?',
-            bindings: [false, 'archived', 2000]
+            client: 'mysql',
+            sql: 'update `books` set `status` = ?, `active` = ? where `publishedDate` > ?',
+            bindings: ['archived', false, 2000]
           }
         ]
       }, done);

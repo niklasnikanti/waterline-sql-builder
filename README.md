@@ -22,7 +22,7 @@ This module is meant to be used by adapter authors who need to generate a query 
 
 ```javascript
 var SQLBuilder = require('waterline-sql-builder');
-var compile = SQLBuilder({ dialect: 'postgres' }).generate;
+var compile = SQLBuilder({ client: 'postgres' }).generate;
 
 // Compile a statement to obtain a SQL template string and an array of bindings.
 var report = compile({

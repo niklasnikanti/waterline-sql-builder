@@ -19,27 +19,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select "name" from "users" where "id" in ($1, $2, $3)',
             bindings: ['1', '2', '3']
           },
           {
-            dialect: 'mysql',
-            sql: 'select `name` from `users` where `id` in (?, ?, ?)',
-            bindings: ['1', '2', '3']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select "name" from "users" where "id" in (?, ?, ?)',
-            bindings: ['1', '2', '3']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select "name" from "users" where "id" in (:1, :2, :3)',
-            bindings: ['1', '2', '3']
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select `name` from `users` where `id` in (?, ?, ?)',
             bindings: ['1', '2', '3']
           }
@@ -69,27 +54,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select "name" from "users" where "id" in ($1, $2, $3) or "id" in ($4, $5, $6)',
             bindings: ['1', '2', '3', '4', '5', '6']
           },
           {
-            dialect: 'mysql',
-            sql: 'select `name` from `users` where `id` in (?, ?, ?) or `id` in (?, ?, ?)',
-            bindings: ['1', '2', '3', '4', '5', '6']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select "name" from "users" where "id" in (?, ?, ?) or "id" in (?, ?, ?)',
-            bindings: ['1', '2', '3', '4', '5', '6']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select "name" from "users" where "id" in (:1, :2, :3) or "id" in (:4, :5, :6)',
-            bindings: ['1', '2', '3', '4', '5', '6']
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select `name` from `users` where `id` in (?, ?, ?) or `id` in (?, ?, ?)',
             bindings: ['1', '2', '3', '4', '5', '6']
           }

@@ -10,27 +10,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select avg("active") from "users"',
             bindings: []
           },
           {
-            dialect: 'mysql',
-            sql: 'select avg(`active`) from `users`',
-            bindings: []
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select avg("active") from "users"',
-            bindings: []
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select avg("active") from "users"',
-            bindings: []
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select avg(`active`) from `users`',
             bindings: []
           }

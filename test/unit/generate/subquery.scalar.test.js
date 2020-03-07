@@ -21,27 +21,12 @@ describe('Query Generation ::', function() {
           },
           outcomes: [
             {
-              dialect: 'postgresql',
+              client: 'postgresql',
               sql: 'select "name", (select "username" from "users" where "status" = $1 or "name" = $2) as "username", "age" from "accounts"',
               bindings: ['active', 'John']
             },
             {
-              dialect: 'mysql',
-              sql: 'select `name`, (select `username` from `users` where `status` = ? or `name` = ?) as `username`, `age` from `accounts`',
-              bindings: ['active', 'John']
-            },
-            {
-              dialect: 'sqlite3',
-              sql: 'select "name", (select "username" from "users" where "status" = ? or "name" = ?) as "username", "age" from "accounts"',
-              bindings: ['active', 'John']
-            },
-            {
-              dialect: 'oracle',
-              sql: 'select "name", (select "username" from "users" where "status" = :1 or "name" = :2) "username", "age" from "accounts"',
-              bindings: ['active', 'John']
-            },
-            {
-              dialect: 'mariadb',
+              client: 'mysql',
               sql: 'select `name`, (select `username` from `users` where `status` = ? or `name` = ?) as `username`, `age` from `accounts`',
               bindings: ['active', 'John']
             }
@@ -70,27 +55,12 @@ describe('Query Generation ::', function() {
           },
           outcomes: [
             {
-              dialect: 'postgresql',
+              client: 'postgresql',
               sql: 'select "name", "age" from "accounts" where "username" = (select "username" from "users" where "color" = $1)',
               bindings: ['accounts.color']
             },
             {
-              dialect: 'mysql',
-              sql: 'select `name`, `age` from `accounts` where `username` = (select `username` from `users` where `color` = ?)',
-              bindings: ['accounts.color']
-            },
-            {
-              dialect: 'sqlite3',
-              sql: 'select "name", "age" from "accounts" where "username" = (select "username" from "users" where "color" = ?)',
-              bindings: ['accounts.color']
-            },
-            {
-              dialect: 'oracle',
-              sql: 'select "name", "age" from "accounts" where "username" = (select "username" from "users" where "color" = :1)',
-              bindings: ['accounts.color']
-            },
-            {
-              dialect: 'mariadb',
+              client: 'mysql',
               sql: 'select `name`, `age` from `accounts` where `username` = (select `username` from `users` where `color` = ?)',
               bindings: ['accounts.color']
             }

@@ -13,27 +13,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'insert into "books" ("title") values ($1) returning "author"',
             bindings: ['Slaughterhouse Five']
           },
           {
-            dialect: 'mysql',
-            sql: 'insert into `books` (`title`) values (?)',
-            bindings: ['Slaughterhouse Five']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'insert into "books" ("title") values (?)',
-            bindings: ['Slaughterhouse Five']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'insert into "books" ("title") values (:1) returning ROWID into :2',
-            bindings: ['Slaughterhouse Five', { 'columnName': 'author' }]
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'insert into `books` (`title`) values (?)',
             bindings: ['Slaughterhouse Five']
           }
@@ -53,27 +38,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'insert into "books" ("author", "title") values ($1, $2) returning "author", "title"',
             bindings: ['Kurt Vonnegut', 'Slaughterhouse Five']
           },
           {
-            dialect: 'mysql',
-            sql: 'insert into `books` (`author`, `title`) values (?, ?)',
-            bindings: ['Kurt Vonnegut', 'Slaughterhouse Five']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'insert into "books" ("author", "title") values (?, ?)',
-            bindings: ['Kurt Vonnegut', 'Slaughterhouse Five']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'insert into "books" ("author", "title") values (:1, :2) returning ROWID into :3',
-            bindings: ['Kurt Vonnegut', 'Slaughterhouse Five', { 'columnName': 'author:title' }]
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'insert into `books` (`author`, `title`) values (?, ?)',
             bindings: ['Kurt Vonnegut', 'Slaughterhouse Five']
           }
@@ -92,27 +62,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'insert into "books" ("title") values ($1) returning *',
             bindings: ['Slaughterhouse Five']
           },
           {
-            dialect: 'mysql',
-            sql: 'insert into `books` (`title`) values (?)',
-            bindings: ['Slaughterhouse Five']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'insert into "books" ("title") values (?)',
-            bindings: ['Slaughterhouse Five']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'insert into "books" ("title") values (:1) returning ROWID into :2',
-            bindings: ['Slaughterhouse Five', { 'columnName': '*' }]
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'insert into `books` (`title`) values (?)',
             bindings: ['Slaughterhouse Five']
           }

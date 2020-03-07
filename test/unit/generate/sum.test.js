@@ -10,27 +10,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select sum("active") from "users"',
             bindings: []
           },
           {
-            dialect: 'mysql',
-            sql: 'select sum(`active`) from `users`',
-            bindings: []
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select sum("active") from "users"',
-            bindings: []
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select sum("active") from "users"',
-            bindings: []
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select sum(`active`) from `users`',
             bindings: []
           }

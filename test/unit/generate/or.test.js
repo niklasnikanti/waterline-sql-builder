@@ -20,27 +20,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select * from "users" where "id" > $1 or "name" = $2',
             bindings: ['10', 'Tester']
           },
           {
-            dialect: 'mysql',
-            sql: 'select * from `users` where `id` > ? or `name` = ?',
-            bindings: ['10', 'Tester']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select * from "users" where "id" > ? or "name" = ?',
-            bindings: ['10', 'Tester']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select * from "users" where "id" > :1 or "name" = :2',
-            bindings: ['10', 'Tester']
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select * from `users` where `id` > ? or `name` = ?',
             bindings: ['10', 'Tester']
           }
@@ -69,27 +54,12 @@ describe('Query Generation ::', function() {
         },
         outcomes: [
           {
-            dialect: 'postgresql',
+            client: 'postgresql',
             sql: 'select * from "users" where ("id" = $1 or "id" > $2) or "name" = $3',
             bindings: ['1', '10', 'Tester']
           },
           {
-            dialect: 'mysql',
-            sql: 'select * from `users` where (`id` = ? or `id` > ?) or `name` = ?',
-            bindings: ['1', '10', 'Tester']
-          },
-          {
-            dialect: 'sqlite3',
-            sql: 'select * from "users" where ("id" = ? or "id" > ?) or "name" = ?',
-            bindings: ['1', '10', 'Tester']
-          },
-          {
-            dialect: 'oracle',
-            sql: 'select * from "users" where ("id" = :1 or "id" > :2) or "name" = :3',
-            bindings: ['1', '10', 'Tester']
-          },
-          {
-            dialect: 'mariadb',
+            client: 'mysql',
             sql: 'select * from `users` where (`id` = ? or `id` > ?) or `name` = ?',
             bindings: ['1', '10', 'Tester']
           }
